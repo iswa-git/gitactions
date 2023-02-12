@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        repository: 'gitactions'
+        repository: 'iswa-git/gitactions'
 
     - uses: mr-smithers-excellent/docker-build-push@v5
       with:
