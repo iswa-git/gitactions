@@ -3,16 +3,12 @@ name: TestCI
 on: push
 
 jobs:
-  build:
-    name: Test Job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-  
   publish:
-    needs: build
-    uses: mr-smithers-excellent/docker-build-push@v5
+  - uses: actions/checkout@v3
+    with:
+      ref: master
+  steps:
+  - uses: mr-smithers-excellent/docker-build-push@v5
     with:
       image: ibrikdev/demo
       registry: docker.io
