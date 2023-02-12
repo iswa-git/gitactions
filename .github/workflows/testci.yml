@@ -18,5 +18,5 @@ jobs:
       with:
         image: ibrikdev/demo
         registry: docker.io
-        username: ${{ secrets.DOCKER_IBRIKDEV_USERNAME }}
+        username: ${{ secrets.DOCKER_IBRIKDEV_USER }}
         password: ${{ secrets.DOCKER_IBRIKDEV_PASSWORD }}
