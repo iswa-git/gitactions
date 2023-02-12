@@ -4,14 +4,13 @@ on: push
 
 jobs:
   publish:
-  - uses: actions/checkout@v3
-    with:
-      ref: master
+    - uses: actions/checkout@v3
+      with:
+        ref: master
   steps:
-  - uses: mr-smithers-excellent/docker-build-push@v5
-    with:
-      image: ibrikdev/demo
-      registry: docker.io
-      username: ${{ secrets.DOCKER_IBRIKDEV_USERNAME }}
-      password: ${{ secrets.DOCKER_IBRIKDEV_PASSWORD }}
-
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: ibrikdev/demo
+        registry: docker.io
+        username: ${{ secrets.DOCKER_IBRIKDEV_USERNAME }}
+        password: ${{ secrets.DOCKER_IBRIKDEV_PASSWORD }}
