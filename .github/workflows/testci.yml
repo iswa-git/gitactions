@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: master
-        
+        repository: 'gitactions'
+
     - uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: ibrikdev/demo
