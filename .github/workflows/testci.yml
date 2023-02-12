@@ -1,0 +1,22 @@
+name: Super-Linter
+
+on: push
+
+jobs:
+  build:
+    name: Test Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+  publish:
+    needs: build
+
+    uses: mr-smithers-excellent/docker-build-push@v5
+    with:
+      image: ibrikdev/demo
+      registry: docker.io
+      username: ${{ secrets.DOCKER_IBRIKDEV_USERNAME }}
+      password: ${{ secrets.DOCKER_IBRIKDEV_PASSWORD }}
+
