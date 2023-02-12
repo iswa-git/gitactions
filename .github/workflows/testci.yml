@@ -1,4 +1,4 @@
-name: Super-Linter
+name: TestCI
 
 on: push
 
@@ -12,7 +12,6 @@ jobs:
   
   publish:
     needs: build
-
     uses: mr-smithers-excellent/docker-build-push@v5
     with:
       image: ibrikdev/demo
